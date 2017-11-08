@@ -5,16 +5,6 @@ const username = document.querySelectorAll('input')[0];
 const password = document.querySelectorAll('input')[1];
 const button   = document.querySelector('button');
 
-username.addEventListener('click', (e) => {
-    username.style.border = '1px solid #cbcbcb';
-    username.placeholder = '';
-})
-password.addEventListener('click', (e) => {
-    password.style.border = '1px solid #cbcbcb';
-    password.placeholder = '';
-})
-
-
 button.addEventListener('click', (e) => {
 
     if(!username.value) {
@@ -27,10 +17,27 @@ button.addEventListener('click', (e) => {
     }
 
     if(username.value && password.value) {
-        username.value = '';
-        password.value = '';
-        alert('Done!');
+        if(username.value.length < 6){
+            username.value = '';
+            username.placeholder = 'Minimum 6 chars';
+        } else if (password.value.length < 6) {
+            password.value = '';
+            password.placeholder = 'Minimum 6 chars';
+        } else {
+            username.value = '';
+            password.value = '';
+            alert('Done!');
+        }
     }
+})
+
+username.addEventListener('click', (e) => {
+    e.target.style.border = '1px solid #cbcbcb';
+    e.target.placeholder = '';
+})
+password.addEventListener('click', (e) => {
+    e.target.style.border = '1px solid #cbcbcb';
+    e.target.placeholder = '';
 })
 
 })()
