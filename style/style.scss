@@ -77,11 +77,14 @@ body {
                     line-height: 170%;
                     width: 100%;
                     margin-top: 3px;
-                    border: 1px solid $grey + 50;
+                    border: 1px solid #cbcbcb;
                     outline: none;
                     color: #444;
                     padding: 5px;
                     border-radius: 3px;
+                    &::-webkit-input-placeholder { 
+                      color: #e74c3c;
+                    }
                 }
                 &:nth-child(2) {
                     margin-top: 10px;
@@ -141,3 +144,7 @@ body {
         }
     }
 }
+
+// .error {
+//     border: 1px solid #e74c3c;
+// }
